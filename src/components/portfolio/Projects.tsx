@@ -1,5 +1,7 @@
-import { ExternalLink, Github } from "lucide-react";
+import { useMemo, useState } from "react";
+import { ExternalLink, Github, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import pRestaurant from "@/assets/project-restaurant.jpg";
 import pPerfumes from "@/assets/project-perfumes.jpg";
 import pNaija from "@/assets/project-naijafood.jpg";
@@ -44,11 +46,26 @@ const projects = [
   },
 ];
 
+const allStacks = Array.from(new Set(projects.flatMap((p) => p.stack)));
+
 const Projects = () => {
+  const [activeFilter, setActiveFilter] = useState<string | null>(null);
+
+  const filtered = useMemo(
+    () =>
+      activeFilter
+        ? projects.filter((p) => p.stack.includes(activeFilter))
+        : projects,
+    [activeFilter]
+  );
+
+  const toggle = (tech: string) =>
+    setActiveFilter((prev) => (prev === tech ? null : tech));
+
   return (
     <section id="projects" className="py-24 relative">
       <div className="container">
-        <div className="max-w-2xl mx-auto text-center mb-16 animate-fade-in">
+        <div className="max-w-2xl mx-auto text-center mb-10 animate-fade-in">
           <p className="text-sm uppercase tracking-widest text-primary mb-3">
             Selected Work
           </p>
@@ -56,12 +73,50 @@ const Projects = () => {
             Recent <span className="text-gradient">projects</span>
           </h2>
           <p className="text-muted-foreground mt-4">
-            A few things I've designed and built recently.
+            A few things I've designed and built recently. Tap a tech badge to filter.
           </p>
         </div>
 
+        {/* Filter bar */}
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
+          <button
+            type="button"
+            onClick={() => setActiveFilter(null)}
+            className={cn(
+              "text-xs px-3 py-1.5 rounded-full border transition-all",
+              activeFilter === null
+                ? "bg-gradient-primary text-primary-foreground border-transparent shadow-glow"
+                : "bg-secondary text-secondary-foreground border-border hover:border-primary/50"
+            )}
+          >
+            All ({projects.length})
+          </button>
+          {allStacks.map((tech) => {
+            const count = projects.filter((p) => p.stack.includes(tech)).length;
+            const active = activeFilter === tech;
+            return (
+              <button
+                key={tech}
+                type="button"
+                onClick={() => toggle(tech)}
+                aria-pressed={active}
+                className={cn(
+                  "text-xs px-3 py-1.5 rounded-full border transition-all inline-flex items-center gap-1.5",
+                  active
+                    ? "bg-gradient-primary text-primary-foreground border-transparent shadow-glow"
+                    : "bg-secondary text-secondary-foreground border-border hover:border-primary/50"
+                )}
+              >
+                {tech}
+                <span className="opacity-70">({count})</span>
+                {active && <X className="size-3" />}
+              </button>
+            );
+          })}
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((p, i) => (
+          {filtered.map((p, i) => (
             <article
               key={p.title}
               className="group rounded-2xl overflow-hidden border border-border bg-gradient-card shadow-card hover:shadow-elegant transition-all duration-500 hover:-translate-y-1 animate-fade-in-up"
@@ -84,14 +139,25 @@ const Projects = () => {
                   {p.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {p.stack.map((s) => (
-                    <span
-                      key={s}
-                      className="text-xs px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground border border-border"
-                    >
-                      {s}
-                    </span>
-                  ))}
+                  {p.stack.map((s) => {
+                    const active = activeFilter === s;
+                    return (
+                      <button
+                        key={s}
+                        type="button"
+                        onClick={() => toggle(s)}
+                        aria-pressed={active}
+                        className={cn(
+                          "text-xs px-2.5 py-1 rounded-full border transition-all cursor-pointer",
+                          active
+                            ? "bg-gradient-primary text-primary-foreground border-transparent shadow-glow"
+                            : "bg-secondary text-secondary-foreground border-border hover:border-primary hover:text-primary"
+                        )}
+                      >
+                        {s}
+                      </button>
+                    );
+                  })}
                 </div>
                 <div className="flex gap-3 pt-2">
                   <Button
@@ -117,6 +183,12 @@ const Projects = () => {
             </article>
           ))}
         </div>
+
+        {filtered.length === 0 && (
+          <p className="text-center text-muted-foreground mt-10">
+            No projects match this filter.
+          </p>
+        )}
       </div>
     </section>
   );
