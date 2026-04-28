@@ -1,15 +1,28 @@
 import { Github, Linkedin, Twitter, Download, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/crestline-logo.png";
 
 const Footer = () => {
   return (
     <footer className="border-t border-border py-12 mt-12">
       <div className="container flex flex-col md:flex-row items-center justify-between gap-6">
-        <div className="text-center md:text-left">
-          <p className="font-bold text-gradient text-lg">&lt;Dev/&gt;</p>
-          <p className="text-sm text-muted-foreground mt-1">
-            © {new Date().getFullYear()} David Edoro. Crafted with React & Tailwind.
-          </p>
+        <div className="flex items-center gap-3 text-center md:text-left">
+          <span className="size-11 rounded-lg bg-white flex items-center justify-center overflow-hidden ring-1 ring-border shadow-sm shrink-0">
+            <img
+              src={logo}
+              alt="Crestline Dev Solutions logo"
+              className="w-full h-full object-contain p-1"
+            />
+          </span>
+          <div>
+            <p className="font-bold text-base leading-tight">
+              <span className="text-foreground">Crestline</span>{" "}
+              <span className="text-gradient">Dev Solutions</span>
+            </p>
+            <p className="text-xs text-muted-foreground mt-1">
+              © {new Date().getFullYear()} David Edoro. Crafted with React & Tailwind.
+            </p>
+          </div>
         </div>
 
         <div className="flex items-center gap-2">

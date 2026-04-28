@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import logo from "@/assets/crestline-logo.png";
 
 const links = [
   { href: "#home", label: "Home" },
@@ -25,8 +26,18 @@ const Navbar = () => {
       }`}
     >
       <nav className="container flex items-center justify-between h-16">
-        <a href="#home" className="font-bold text-lg tracking-tight">
-          <span className="text-gradient">&lt;Dev/&gt;</span>
+        <a href="#home" className="flex items-center gap-2 font-bold tracking-tight">
+          <span className="size-9 rounded-lg bg-white flex items-center justify-center overflow-hidden ring-1 ring-border shadow-sm">
+            <img
+              src={logo}
+              alt="Crestline Dev Solutions logo"
+              className="w-full h-full object-contain p-1"
+            />
+          </span>
+          <span className="hidden sm:inline text-sm leading-tight">
+            <span className="text-foreground">Crestline</span>{" "}
+            <span className="text-gradient">Dev Solutions</span>
+          </span>
         </a>
         <ul className="hidden md:flex items-center gap-8">
           {links.map((l) => (
