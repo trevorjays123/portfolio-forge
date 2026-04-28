@@ -1,36 +1,46 @@
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import p1 from "@/assets/project-1.jpg";
-import p2 from "@/assets/project-2.jpg";
-import p3 from "@/assets/project-3.jpg";
+import pRestaurant from "@/assets/project-restaurant.jpg";
+import pPerfumes from "@/assets/project-perfumes.jpg";
+import pNaija from "@/assets/project-naijafood.jpg";
+import pLuxe from "@/assets/project-luxedrive.jpg";
 
 const projects = [
   {
-    title: "Nova Analytics Dashboard",
+    title: "Restaurant E-Commerce",
     description:
-      "Real-time SaaS analytics platform with customizable widgets and team collaboration.",
-    image: p1,
-    stack: ["React", "TypeScript", "Tailwind", "Recharts"],
-    live: "https://example.com",
-    source: "https://github.com",
+      "Three cuisines, one kitchen — a full restaurant ordering platform with menu browsing, cart, and checkout for Nigerian, Continental, and Fast Food.",
+    image: pRestaurant,
+    stack: ["React", "TypeScript", "Tailwind", "Vercel"],
+    live: "https://restaurant-ecommerce-client.vercel.app/",
+    source: "https://github.com/trevorjays123",
   },
   {
-    title: "Lumen E-Commerce",
+    title: "NEESCENT Perfumes",
     description:
-      "Headless storefront with Stripe checkout, search, and a fully responsive product catalog.",
-    image: p2,
-    stack: ["React", "Next.js", "Stripe", "Tailwind"],
-    live: "https://example.com",
-    source: "https://github.com",
+      "Luxury fragrance storefront with curated collections, cart, and Paystack checkout — delivered nationwide across Nigeria.",
+    image: pPerfumes,
+    stack: ["React", "TypeScript", "Tailwind", "Paystack"],
+    live: "https://trevorjays123.github.io/NEESCENT-PERFUMES/",
+    source: "https://github.com/trevorjays123/NEESCENT-PERFUMES",
   },
   {
-    title: "Tasker Mobile",
+    title: "Naija Food Hub",
     description:
-      "Mobile-first task manager with offline support, drag & drop, and dark theme.",
-    image: p3,
-    stack: ["React", "TypeScript", "PWA", "Zustand"],
-    live: "https://example.com",
-    source: "https://github.com",
+      "Lagos-based food delivery site featuring authentic Nigerian, Continental, and Fast Food menus with category filtering and a polished UI.",
+    image: pNaija,
+    stack: ["React", "TypeScript", "Tailwind", "Vite"],
+    live: "https://trevorjays123.github.io/naija-food-hub/",
+    source: "https://github.com/trevorjays123/naija-food-hub",
+  },
+  {
+    title: "Luxe Drive — WHYTE Logistics",
+    description:
+      "Editorial chauffeur & luxury car rental site with a curated fleet, multi-city coverage, and a refined booking experience.",
+    image: pLuxe,
+    stack: ["React", "TypeScript", "Tailwind", "Vite"],
+    live: "https://trevorjays123.github.io/luxe-drive/",
+    source: "https://github.com/trevorjays123/luxe-drive",
   },
 ];
 
