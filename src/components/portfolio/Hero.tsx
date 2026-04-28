@@ -32,7 +32,7 @@ const Hero = () => {
             with React & TypeScript
           </h1>
           <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
-            I'm Alex Carter — a full-stack web developer crafting fast, modern
+            I'm David Edoro — a full-stack web developer crafting fast, modern
             interfaces with React, TypeScript, and Tailwind CSS. From idea to
             production-ready product.
           </p>
@@ -44,15 +44,6 @@ const Hero = () => {
             >
               <a href="#projects">
                 View My Work <ArrowRight className="ml-2 size-4" />
-              </a>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Github className="mr-2 size-4" /> GitHub
               </a>
             </Button>
             <Button asChild variant="outline" size="lg">
