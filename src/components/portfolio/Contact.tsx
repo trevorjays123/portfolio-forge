@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { z } from "zod";
-import { Mail, Send, Briefcase } from "lucide-react";
+import { Mail, Send, Briefcase, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -127,8 +127,30 @@ const Contact = () => {
             >
               {loading ? "Sending..." : (<>Send Message <Send className="ml-2 size-4" /></>)}
             </Button>
-            <p className="text-xs text-muted-foreground text-center flex items-center justify-center gap-1">
-              <Mail className="size-3" /> alex@example.com
+            <div className="pt-2 border-t border-border/60 grid sm:grid-cols-3 gap-3 text-xs">
+              <a
+                href="mailto:crestlinedevsolutions@gmail.com"
+                className="flex items-center justify-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+              >
+                <Mail className="size-3.5" /> Email
+              </a>
+              <a
+                href="https://wa.me/2348058174134"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+              >
+                <MessageCircle className="size-3.5" /> WhatsApp
+              </a>
+              <a
+                href="tel:+2348058174134"
+                className="flex items-center justify-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+              >
+                <Phone className="size-3.5" /> Call
+              </a>
+            </div>
+            <p className="text-[11px] text-muted-foreground text-center">
+              crestlinedevsolutions@gmail.com · +234 805 817 4134
             </p>
           </form>
         </div>
