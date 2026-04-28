@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="text-center md:text-left">
           <p className="font-bold text-gradient text-lg">&lt;Dev/&gt;</p>
           <p className="text-sm text-muted-foreground mt-1">
-            © {new Date().getFullYear()} Alex Carter. Crafted with React & Tailwind.
+            © {new Date().getFullYear()} David Edoro. Crafted with React & Tailwind.
           </p>
         </div>
 
@@ -17,7 +17,7 @@ const Footer = () => {
             { icon: Github, href: "https://github.com", label: "GitHub" },
             { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
             { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-            { icon: Mail, href: "mailto:alex@example.com", label: "Email" },
+            { icon: Mail, href: "mailto:crestlinedevsolutions@gmail.com", label: "Email" },
           ].map(({ icon: Icon, href, label }) => (
             <a
               key={label}
@@ -32,8 +32,11 @@ const Footer = () => {
           ))}
         </div>
 
-        <Button asChild variant="outline">
-          <a href="/resume.pdf" download>
+        <Button
+          asChild
+          className="bg-gradient-primary text-primary-foreground hover:opacity-90 shadow-glow"
+        >
+          <a href="/resume.pdf" download="David-Edoro-Resume.pdf">
             <Download className="mr-2 size-4" /> Download Resume
           </a>
         </Button>

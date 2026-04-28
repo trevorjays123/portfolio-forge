@@ -59,15 +59,27 @@ const Hero = () => {
         </div>
 
         <div className="relative animate-scale-in mx-auto">
-          <div className="absolute -inset-6 bg-gradient-primary opacity-30 blur-3xl rounded-full animate-glow-pulse" />
-          <div className="relative size-72 md:size-80 lg:size-96 rounded-3xl overflow-hidden border border-border shadow-elegant animate-float">
+          {/* Glow halo */}
+          <div className="absolute -inset-8 bg-gradient-primary opacity-40 blur-3xl rounded-full animate-glow-pulse" />
+          {/* Rotating gradient ring */}
+          <div
+            className="absolute -inset-2 rounded-[2rem] opacity-80"
+            style={{
+              background:
+                "conic-gradient(from 0deg, hsl(var(--primary)), hsl(var(--accent, var(--primary))), transparent, hsl(var(--primary)))",
+              filter: "blur(2px)",
+            }}
+          />
+          <div className="relative size-72 md:size-80 lg:size-96 rounded-[2rem] overflow-hidden border border-primary/30 shadow-elegant animate-float ring-1 ring-primary/20">
             <img
               src={headshot}
-              alt="Alex Carter, web developer"
+              alt="David Edoro, full-stack web developer"
               width={768}
               height={768}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover scale-105"
             />
+            {/* Subtle inner gradient for polish */}
+            <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent pointer-events-none" />
           </div>
         </div>
       </div>
