@@ -15,7 +15,7 @@ const projects = [
     image: pRestaurant,
     stack: ["React", "TypeScript", "Tailwind", "Vercel"],
     live: "https://restaurant-ecommerce-client.vercel.app/",
-    source: "https://github.com/trevorjays123",
+    source: "https://restaurant-ecommerce-client.vercel.app/",
   },
   {
     title: "NEESCENT Perfumes",
@@ -23,8 +23,8 @@ const projects = [
       "Luxury fragrance storefront with curated collections, cart, and Paystack checkout — delivered nationwide across Nigeria.",
     image: pPerfumes,
     stack: ["React", "TypeScript", "Tailwind", "Paystack"],
-    live: "https://trevorjays123.github.io/NEESCENT-PERFUMES/",
-    source: "https://github.com/trevorjays123/NEESCENT-PERFUMES",
+    live: "https://neescent-perfumes.vercel.app/",
+    source: "https://neescent-perfumes.vercel.app/",
   },
   {
     title: "Naija Food Hub",
@@ -32,8 +32,8 @@ const projects = [
       "Lagos-based food delivery site featuring authentic Nigerian, Continental, and Fast Food menus with category filtering and a polished UI.",
     image: pNaija,
     stack: ["React", "TypeScript", "Tailwind", "Vite"],
-    live: "https://trevorjays123.github.io/naija-food-hub/",
-    source: "https://github.com/trevorjays123/naija-food-hub",
+    live: "https://naija-food-hub.vercel.app/",
+    source: "https://naija-food-hub.vercel.app/",
   },
   {
     title: "Luxe Drive — WHYTE Logistics",
@@ -41,8 +41,8 @@ const projects = [
       "Editorial chauffeur & luxury car rental site with a curated fleet, multi-city coverage, and a refined booking experience.",
     image: pLuxe,
     stack: ["React", "TypeScript", "Tailwind", "Vite"],
-    live: "https://trevorjays123.github.io/luxe-drive/",
-    source: "https://github.com/trevorjays123/luxe-drive",
+    live: "https://luxe-drive-two.vercel.app/",
+    source: "https://luxe-drive-two.vercel.app/",
   },
 ];
 
