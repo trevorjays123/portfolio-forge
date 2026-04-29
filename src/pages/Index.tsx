@@ -4,6 +4,7 @@ import Skills from "@/components/portfolio/Skills";
 import Projects from "@/components/portfolio/Projects";
 import Contact from "@/components/portfolio/Contact";
 import Footer from "@/components/portfolio/Footer";
+import WhatsAppButton from "@/components/portfolio/WhatsAppButton";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };
